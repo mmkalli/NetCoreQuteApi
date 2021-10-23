@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "udmldmLeqzknZRi9NdCAnfExzNFVqo8EBdtk36Vq270shlOykxoFah6W1ME0WwUpKuhUIClQc4zryR/qJSU6xg==",
+  "dgSpecHash": "CeLG1U67SgVPUffES1AwsCFXB+7dB4f48UoENnz3eajX1/1FbilgGFrEqdElJxcMWs173lKLytOw/+IFi8xF5w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\melih\\Source\\Repos\\netcoreapis\\QuotesApi\\QuotesApi\\QuotesApi.csproj",
+  "projectFilePath": "C:\\Users\\melih\\source\\repos\\netcoreapis\\QuotesApi\\QuotesApi\\QuotesApi.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
