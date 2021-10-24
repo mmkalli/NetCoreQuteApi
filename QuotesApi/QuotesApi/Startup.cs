@@ -30,10 +30,11 @@ namespace QuotesApi
 
             services.AddControllers();
             services.AddDbContext<QuotesDbContext>(options=> options.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\melih\Documents\NetCoreProjects.mdf;Integrated Security=True;Connect Timeout=30"));
+            services.AddMvc().AddXmlSerializerFormatters();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, QuotesDbContext quotesDbContext)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -45,8 +46,6 @@ namespace QuotesApi
             app.UseRouting();
 
             app.UseAuthorization();
-
-            quotesDbContext.Database.EnsureCreated();
 
             app.UseEndpoints(endpoints =>
             {

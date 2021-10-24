@@ -62,6 +62,8 @@ namespace QuotesApi.Controllers
                 entity.Title = quote.Title;
                 entity.Author = quote.Author;
                 entity.Description = quote.Description;
+                entity.Type = quote.Type;
+                entity.CreatedAt = quote.CreatedAt;
                 _quotesDbContext.SaveChanges();
             }
             else

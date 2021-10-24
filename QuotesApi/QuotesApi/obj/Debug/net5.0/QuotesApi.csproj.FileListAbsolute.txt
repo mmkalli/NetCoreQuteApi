@@ -77,3 +77,5 @@ C:\Users\melih\source\repos\netcoreapis\QuotesApi\QuotesApi\bin\Debug\net5.0\run
 C:\Users\melih\source\repos\netcoreapis\QuotesApi\QuotesApi\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\melih\source\repos\netcoreapis\QuotesApi\QuotesApi\obj\Debug\net5.0\QuotesApi.csprojAssemblyReference.cache
 C:\Users\melih\source\repos\netcoreapis\QuotesApi\QuotesApi\obj\Debug\net5.0\QuotesApi.csproj.CopyComplete
+C:\Users\melih\source\repos\netcoreapis\QuotesApi\QuotesApi\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\melih\source\repos\netcoreapis\QuotesApi\QuotesApi\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
