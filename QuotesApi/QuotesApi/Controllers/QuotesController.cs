@@ -26,9 +26,40 @@ namespace QuotesApi.Controllers
 
         // GET: api/<QuotesController>
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult Get(string sort)
         {
-            return Ok(_quotesDbContext.Quotes);
+            IQueryable<Quote> quoteList;
+            switch (sort)
+            {
+                case "asc":
+                    quoteList = _quotesDbContext.Quotes.OrderBy(q => q.CreatedAt);
+                    break;
+                case "desc":
+                    quoteList = _quotesDbContext.Quotes.OrderByDescending(q => q.CreatedAt);
+                    break;
+                default:
+                    quoteList = _quotesDbContext.Quotes;
+                    break;
+            }
+            return Ok(quoteList);
+        }
+
+        [HttpGet]
+        [Route("[action]")]
+        public IActionResult PagingQuote(int? pageNumber, int? pageSize)
+        {
+            var currentPageNumber = pageNumber ?? 1;
+            var currentPageSize = pageSize ?? 5;
+            var quotes = _quotesDbContext.Quotes.Skip((currentPageNumber - 1) * currentPageSize).Take(currentPageSize);
+            return Ok(quotes);
+        }
+
+        [HttpGet]
+        [Route("[action]")]
+        public IActionResult SearchQuote(string type)
+        {
+            var quotes = _quotesDbContext.Quotes.Where(x=>x.Type.Contains(type));
+            return Ok(quotes);
         }
 
         // GET api/<QuotesController>/5
@@ -36,7 +67,7 @@ namespace QuotesApi.Controllers
         public IActionResult Get(int id)
         {
             var entity = _quotesDbContext.Quotes.FirstOrDefault(x => x.Id == id);
-            if(entity == null)
+            if (entity == null)
             {
                 return NotFound("No record found...");
             }
@@ -56,8 +87,8 @@ namespace QuotesApi.Controllers
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] Quote quote)
         {
-            var entity = _quotesDbContext.Quotes.FirstOrDefault(x=>x.Id == id);
-            if(entity != null)
+            var entity = _quotesDbContext.Quotes.FirstOrDefault(x => x.Id == id);
+            if (entity != null)
             {
                 entity.Title = quote.Title;
                 entity.Author = quote.Author;
