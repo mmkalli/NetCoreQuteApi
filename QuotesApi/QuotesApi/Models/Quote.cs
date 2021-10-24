@@ -1,4 +1,6 @@
-﻿using System;
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -22,5 +24,8 @@ namespace QuotesApi.Models
         public string Type { get; set; }
         [Required]
         public DateTime CreatedAt { get; set; }
+
+        [JsonIgnore]
+        public string UserId { get; set; }
     }
 }

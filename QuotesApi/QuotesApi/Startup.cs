@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -33,6 +34,17 @@ namespace QuotesApi
             services.AddDbContext<QuotesDbContext>(options=> options.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\melih\Documents\NetCoreProjects.mdf;Integrated Security=True;Connect Timeout=30"));
             services.AddMvc().AddXmlSerializerFormatters();
             services.AddResponseCaching();
+
+            // 1. Add Authentication Services
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
+            {
+                options.Authority = "https://quotesapimmk.us.auth0.com/";
+                options.Audience = "https://localhost:44335/";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +60,9 @@ namespace QuotesApi
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            // 2. Enable authentication middleware
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

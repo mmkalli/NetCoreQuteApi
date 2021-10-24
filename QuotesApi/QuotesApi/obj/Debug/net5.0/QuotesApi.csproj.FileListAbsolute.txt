@@ -79,3 +79,4 @@ C:\Users\melih\source\repos\netcoreapis\QuotesApi\QuotesApi\obj\Debug\net5.0\Quo
 C:\Users\melih\source\repos\netcoreapis\QuotesApi\QuotesApi\obj\Debug\net5.0\QuotesApi.csproj.CopyComplete
 C:\Users\melih\source\repos\netcoreapis\QuotesApi\QuotesApi\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\melih\source\repos\netcoreapis\QuotesApi\QuotesApi\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\melih\source\repos\netcoreapis\QuotesApi\QuotesApi\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
