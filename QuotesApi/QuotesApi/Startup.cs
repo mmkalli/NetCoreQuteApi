@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -31,6 +32,7 @@ namespace QuotesApi
             services.AddControllers();
             services.AddDbContext<QuotesDbContext>(options=> options.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\melih\Documents\NetCoreProjects.mdf;Integrated Security=True;Connect Timeout=30"));
             services.AddMvc().AddXmlSerializerFormatters();
+            services.AddResponseCaching();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,6 +42,8 @@ namespace QuotesApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseResponseCaching();
 
             app.UseHttpsRedirection();
 
@@ -51,6 +55,8 @@ namespace QuotesApi
             {
                 endpoints.MapControllers();
             });
+
+            
         }
     }
 }

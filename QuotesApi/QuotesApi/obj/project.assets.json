@@ -199,6 +199,22 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Formatters.Xml.dll": {}
         }
       },
+      "Microsoft.AspNetCore.ResponseCaching/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http": "2.2.0",
+          "Microsoft.AspNetCore.Http.Extensions": "2.2.0",
+          "Microsoft.AspNetCore.ResponseCaching.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Caching.Memory": "2.2.0",
+          "Microsoft.Extensions.Logging.Abstractions": "2.2.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.ResponseCaching.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.ResponseCaching.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.ResponseCaching.Abstractions/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -2081,6 +2097,19 @@
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Formatters.Xml.xml",
         "microsoft.aspnetcore.mvc.formatters.xml.2.2.0.nupkg.sha512",
         "microsoft.aspnetcore.mvc.formatters.xml.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.ResponseCaching/2.2.0": {
+      "sha512": "MEBP1UwGD7X1vhO43LN5KhZDt4HMTX7u1YA0nq7HR6IDRhWczHczJPDu3GbL01IMdb03hyT/glJIv8PI5zKtnA==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.responsecaching/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.ResponseCaching.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.ResponseCaching.xml",
+        "microsoft.aspnetcore.responsecaching.2.2.0.nupkg.sha512",
+        "microsoft.aspnetcore.responsecaching.nuspec"
       ]
     },
     "Microsoft.AspNetCore.ResponseCaching.Abstractions/2.2.0": {
@@ -6584,6 +6613,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "Microsoft.AspNetCore.Mvc.Formatters.Xml >= 2.2.0",
+      "Microsoft.AspNetCore.ResponseCaching >= 2.2.0",
       "Microsoft.EntityFrameworkCore >= 5.0.11",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.11",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.11"
@@ -6634,6 +6664,10 @@
         "targetAlias": "net5.0",
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.Formatters.Xml": {
+            "target": "Package",
+            "version": "[2.2.0, )"
+          },
+          "Microsoft.AspNetCore.ResponseCaching": {
             "target": "Package",
             "version": "[2.2.0, )"
           },

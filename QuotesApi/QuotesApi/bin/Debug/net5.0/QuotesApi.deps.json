@@ -26,6 +26,7 @@
       "QuotesApi/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.Formatters.Xml": "2.2.0",
+          "Microsoft.AspNetCore.ResponseCaching": "2.2.0",
           "Microsoft.EntityFrameworkCore": "5.0.11",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.11",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.11",
@@ -87,7 +88,7 @@
           "Microsoft.AspNetCore.Razor": "5.0.0.0",
           "Microsoft.AspNetCore.Razor.Runtime": "5.0.0.0",
           "Microsoft.AspNetCore.ResponseCaching.Abstractions.Reference": "5.0.0.0",
-          "Microsoft.AspNetCore.ResponseCaching": "5.0.0.0",
+          "Microsoft.AspNetCore.ResponseCaching.Reference": "5.0.0.0",
           "Microsoft.AspNetCore.ResponseCompression": "5.0.0.0",
           "Microsoft.AspNetCore.Rewrite": "5.0.0.0",
           "Microsoft.AspNetCore.Routing.Abstractions.Reference": "5.0.0.0",
@@ -421,6 +422,15 @@
       "Microsoft.AspNetCore.Mvc.Formatters.Xml/2.2.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.Core": "2.2.0"
+        }
+      },
+      "Microsoft.AspNetCore.ResponseCaching/2.2.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http": "2.2.0",
+          "Microsoft.AspNetCore.Http.Extensions": "2.2.0",
+          "Microsoft.AspNetCore.ResponseCaching.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Caching.Memory": "5.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "5.0.0"
         }
       },
       "Microsoft.AspNetCore.ResponseCaching.Abstractions/2.2.0": {
@@ -1855,7 +1865,7 @@
         },
         "compileOnly": true
       },
-      "Microsoft.AspNetCore.ResponseCaching/5.0.0.0": {
+      "Microsoft.AspNetCore.ResponseCaching.Reference/5.0.0.0": {
         "compile": {
           "Microsoft.AspNetCore.ResponseCaching.dll": {}
         },
@@ -3299,6 +3309,13 @@
       "path": "microsoft.aspnetcore.mvc.formatters.xml/2.2.0",
       "hashPath": "microsoft.aspnetcore.mvc.formatters.xml.2.2.0.nupkg.sha512"
     },
+    "Microsoft.AspNetCore.ResponseCaching/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MEBP1UwGD7X1vhO43LN5KhZDt4HMTX7u1YA0nq7HR6IDRhWczHczJPDu3GbL01IMdb03hyT/glJIv8PI5zKtnA==",
+      "path": "microsoft.aspnetcore.responsecaching/2.2.0",
+      "hashPath": "microsoft.aspnetcore.responsecaching.2.2.0.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.ResponseCaching.Abstractions/2.2.0": {
       "type": "package",
       "serviceable": true,
@@ -4359,7 +4376,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.AspNetCore.ResponseCaching/5.0.0.0": {
+    "Microsoft.AspNetCore.ResponseCaching.Reference/5.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
